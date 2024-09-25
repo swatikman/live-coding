@@ -12,5 +12,11 @@ export type AnalyzeHistoricalDataResponseDto = {
   timestampTo: number,
   priceChange: number,
   priceChangeInPercent: number,
-  priceChangeDirection: 'increase' | 'decrease' | 'equal'
+  priceChangeDirection: PriceChangeDirectionEnum
+}
+
+export enum PriceChangeDirectionEnum {
+  INCREASE = 'increase',
+  DECREASE = 'decrease',
+  EQUAL = 'equal',
 }
