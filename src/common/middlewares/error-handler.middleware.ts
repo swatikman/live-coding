@@ -1,8 +1,10 @@
-import {Request, Response} from "express";
+import {NextFunction, Request, Response} from "express";
 import {HttpStatusCode} from "axios";
 
-export const errorHandlerMiddleware = (err: Error | JoiError, req: Request, res: Response) => {
-  const joiError = err as JoiError
+// it won't work without next function
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const errorHandlerMiddleware = (err: Error, req: Request, res: Response, next: NextFunction) => {
+  const joiError = err as JoiError;
   if (joiError && joiError.error && joiError.error.isJoi) {
     return res.status(HttpStatusCode.BadRequest).json({
       type: joiError.type,

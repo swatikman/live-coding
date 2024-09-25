@@ -14,7 +14,7 @@ app.get("/", async (req: Request, res: Response) => {
 
 app.use('/historical-trades', HistoricalDataController)
 
-app.use(errorHandlerMiddleware)
+app.use(errorHandlerMiddleware);
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
