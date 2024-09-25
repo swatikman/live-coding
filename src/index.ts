@@ -1,6 +1,6 @@
 import express, {Express, Request, Response} from "express";
 import dotenv from "dotenv";
-import {fetchKLine} from "./integrations/binance/binance.service";
+import {fetchKLines} from "./integrations/binance/binance.service";
 import {BinanceIntervalEnum, BinanceSymbolEnum} from "./integrations/binance/binance.type";
 
 dotenv.config();
@@ -9,7 +9,7 @@ const app: Express = express();
 const port = process.env.PORT || 3000;
 
 app.get("/", async (req: Request, res: Response) => {
-  await fetchKLine({
+  await fetchKLines({
     symbol: BinanceSymbolEnum.BTC_USDT,
     interval: BinanceIntervalEnum.ONE_HOUR
   })

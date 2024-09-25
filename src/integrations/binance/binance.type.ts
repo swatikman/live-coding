@@ -33,13 +33,13 @@ export type BinanceKLine = [number, string, string, string, string, string, numb
 
 export type KLine = {
   klineOpenTime: number,
-  openPrice: string,
-  highPrice: string,
-  lowPrice: string,
-  closePrice: string,
+  openPrice: number,
+  highPrice: number,
+  lowPrice: number,
+  closePrice: number,
   volume: string,
   klineCloseTime: number,
-  quoteAssetVolume: string,
+  quoteAssetVolume: number,
   numberOfTrades: number,
   takerBuyBaseAssetVolume: string,
   takerBuyQuoteAssetVolume: string
