@@ -2,10 +2,10 @@
 
 ## Run project
 ``` bash
-npm run start
+npm run dev
 ```
 
 ## Run test
 ``` bash
-npm run start
+npm run test
 ```
