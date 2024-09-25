@@ -12,7 +12,9 @@ export type AnalyzeHistoricalDataResponseDto = {
   timestampTo: number,
   priceChange: number,
   priceChangeInPercent: number,
-  priceChangeDirection: PriceChangeDirectionEnum
+  priceChangeDirection: PriceChangeDirectionEnum,
+  startPrice: number,
+  endPrice: number,
 }
 
 export enum PriceChangeDirectionEnum {

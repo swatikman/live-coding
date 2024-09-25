@@ -44,7 +44,9 @@ describe('Historical data service', () => {
           timestampTo: 1725458399999,
           priceChangeDirection: 'increase',
           priceChange: 10000,
-          priceChangeInPercent: 20
+          priceChangeInPercent: 20,
+          startPrice: 50000,
+          endPrice: 60000,
         })
       })
 
@@ -67,7 +69,9 @@ describe('Historical data service', () => {
           timestampTo: 1725458399999,
           priceChangeDirection: 'decrease',
           priceChange: -50000,
-          priceChangeInPercent: -50
+          priceChangeInPercent: -50,
+          startPrice: 100000,
+          endPrice: 50000,
         })
       })
 
@@ -90,7 +94,9 @@ describe('Historical data service', () => {
           timestampTo: 1725458399999,
           priceChangeDirection: 'equal',
           priceChange: 0,
-          priceChangeInPercent: 0
+          priceChangeInPercent: 0,
+          startPrice: 50000,
+          endPrice: 50000,
         })
       })
     })

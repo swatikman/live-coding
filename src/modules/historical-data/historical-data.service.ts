@@ -23,7 +23,7 @@ export async function analyzeHistoricalData(data: AnalyzeHistoricalDataDto): Pro
     priceChangeInPercent = (lastKline.closePrice - firstKLine.openPrice) / firstKLine.openPrice * 100;
   } else if (priceChange < 0) {
     priceChangeDirection = PriceChangeDirectionEnum.DECREASE;
-    priceChangeInPercent = (lastKline.openPrice - firstKLine.closePrice) / firstKLine.openPrice * 100;
+    priceChangeInPercent = (lastKline.closePrice - firstKLine.openPrice) / firstKLine.openPrice * 100;
   }
 
   return {
@@ -34,5 +34,7 @@ export async function analyzeHistoricalData(data: AnalyzeHistoricalDataDto): Pro
     priceChangeDirection,
     priceChange,
     priceChangeInPercent,
+    startPrice: firstKLine.openPrice,
+    endPrice: lastKline.closePrice,
   };
 }
