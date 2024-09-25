@@ -1,7 +1,11 @@
 # live-coding
 
-To start
+## Run project
+``` bash
 npm run start
+```
 
-To run test
-npm run test
+## Run test
+``` bash
+npm run start
+```
