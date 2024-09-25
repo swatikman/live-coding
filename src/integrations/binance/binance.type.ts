@@ -29,7 +29,7 @@ export enum BinanceIntervalEnum {
   ONE_MONTH = '1M',
 }
 
-export type BinanceKLine = [number, string, string, string, string, string, number, string, number, string, string]
+export type BinanceKLine = [number, string, string, string, string, string, number, string, number, string, string, string]
 
 export type KLine = {
   klineOpenTime: number,

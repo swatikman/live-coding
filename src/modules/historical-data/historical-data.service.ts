@@ -14,16 +14,16 @@ export async function analyzeHistoricalData(data: AnalyzeHistoricalDataDto): Pro
   const formattedKLines = binanceKLines.map(binanceKLine => convertKLineToObject(binanceKLine));
   const firstKLine = formattedKLines[0];
   const lastKline = formattedKLines[formattedKLines.length - 1];
-  const priceChange = formattedKLines[0].closePrice - lastKline.closePrice;
+  const priceChange = lastKline.closePrice - formattedKLines[0].closePrice;
 
   let priceChangeDirection: PriceChangeDirectionEnum = PriceChangeDirectionEnum.EQUAL;
   let priceChangeInPercent: number = 0;
   if (priceChange > 0) {
     priceChangeDirection = PriceChangeDirectionEnum.INCREASE;
-    priceChangeInPercent = (lastKline.klineCloseTime - firstKLine.klineOpenTime) / firstKLine.klineOpenTime * 100;
+    priceChangeInPercent = (lastKline.closePrice - firstKLine.openPrice) / firstKLine.openPrice * 100;
   } else if (priceChange < 0) {
     priceChangeDirection = PriceChangeDirectionEnum.DECREASE;
-    priceChangeInPercent = (firstKLine.klineCloseTime - lastKline.klineOpenTime) / firstKLine.klineOpenTime * 100;
+    priceChangeInPercent = (lastKline.openPrice - firstKLine.closePrice) / firstKLine.openPrice * 100;
   }
 
   return {
